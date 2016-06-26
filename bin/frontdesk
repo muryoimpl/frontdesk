@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'bundler'
+
+Bundler.require
+$LOAD_PATH << File.expand_path('../../lib', __FILE__)
+
+require 'frontdesk'
+
+FrontDesk::Work.start
