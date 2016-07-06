@@ -2,3 +2,5 @@
 source "https://rubygems.org"
 
 gem 'pi_piper'
+
+gem 'deka_eiwakun'
