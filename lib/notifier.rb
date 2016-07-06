@@ -5,7 +5,7 @@ class FrontDesk::Notifier
     end
 
     def inherited(base)
-      base.subclasses << base
+      base.superclass.subclasses << base
     end
 
     def instance

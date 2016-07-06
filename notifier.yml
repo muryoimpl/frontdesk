@@ -1,2 +1,2 @@
 notifiers:
-  - IdobataNotifier
+  - FrontDesk::IdobataNotifier

@@ -2,7 +2,7 @@ require 'net/http'
 
 class FrontDesk::IdobataNotifier < FrontDesk::Notifier
   def enter
-    puts 'enter idobata '
+    puts 'enter idobata'
   end
 
   def leave
