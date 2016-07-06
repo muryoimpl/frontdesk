@@ -3,9 +3,8 @@ class FrontDesk::Work
     def start
       PiPiper.watch pin: FrontDesk::GPIO_PIN_18 do
         read
-        if changed?
-          FrontDesk::NotifierRunner.run(value)
-        end
+
+        FrontDesk::NotifierRunner.run(value) if changed?
       end
 
       PiPiper.wait
