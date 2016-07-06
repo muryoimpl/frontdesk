@@ -13,7 +13,13 @@ class FrontDesk::Notifier
     end
   end
 
-  def notify
+  protected
+
+  def enter
+    raise NotImplementedError, "You must implement #{self.class}##{__method__}"
+  end
+
+  def leave
     raise NotImplementedError, "You must implement #{self.class}##{__method__}"
   end
 end
