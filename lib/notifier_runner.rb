@@ -32,8 +32,7 @@ class FrontDesk::NotifierRunner
     end
 
     def using_notifiers
-      yaml = YAML.load_file('./notifier.yml')
-      yaml['notifiers']
+      Settings.notifiers
     end
   end
 end
