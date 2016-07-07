@@ -2,4 +2,7 @@ notifiers:
   - FrontDesk::IdobataNotifier
 
 idobata:
-  url: https://idobata.io/hook/custom/6c2290f1-5043-424e-92e2-f37f355c5e1a
+  url: 'hook url'
+
+room:
+  name: 俺の席
