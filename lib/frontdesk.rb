@@ -4,7 +4,7 @@ module FrontDesk
   GPIO_PIN_18 = 18
 
   Bundler.require
-  Config.load_and_set_settings("./settings.yml")
+  Config.load_and_set_settings('./settings.yml')
 
   include PiPiper
 
