@@ -1,3 +1,6 @@
+pins:
+  infrared_sensor: 18
+
 room:
   name: 俺の席
 
