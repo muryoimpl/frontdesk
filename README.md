@@ -4,7 +4,6 @@ Monitor whether you sit on your seat with Raspberry Pi
 ## Requirement
 
 You need Raspberry Pi which is installed Ruby 2.3.x, and HC-SR501.
-Now, you have to use No.18 GPIO pin for HC-SR501.
 
 ## Installation
 
@@ -19,6 +18,14 @@ $ bundle install
 And write configuration in `settings.yml`.
 
 ```yaml
+# write GPIO pin number
+pins:
+  infrared_sensor: 18
+
+# `name` is the room name which you want monitor.
+room:
+  name: ジビエルーム（左）
+
 # add your Notification classes which you want to use.
 notifiers:
   - FrontDesk::IdobataNotifier
@@ -27,9 +34,6 @@ notifiers:
 idobata:
   url: 'hook url'
 
-# `name` is the room name which you want monitor.
-room:
-  name: ジビエルーム（左）
 ```
 
 ## Usage
