@@ -1,8 +1,8 @@
+room:
+  name: 俺の席
+
 notifiers:
   - FrontDesk::IdobataNotifier
 
 idobata:
   url: 'hook url'
-
-room:
-  name: 俺の席
