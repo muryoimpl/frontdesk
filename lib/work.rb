@@ -1,6 +1,8 @@
 class FrontDesk::Work
   class << self
     def start
+      NotifierRunner.require_notifiers
+
       PiPiper.watch pin: Settings.pins.infrared_sensor do
         read
 

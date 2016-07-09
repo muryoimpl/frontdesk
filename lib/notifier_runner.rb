@@ -3,11 +3,7 @@ require 'yaml'
 class FrontDesk::NotifierRunner
   class << self
     def run(value)
-      require_notifiers
-
       FrontDesk::Notifier.subclasses.each do |notifier|
-        next unless use?(notifier)
-
         case value
         when PiPiper::Pin::GPIO_HIGH
           notifier.instance.enter
@@ -22,7 +18,11 @@ class FrontDesk::NotifierRunner
     end
 
     def require_notifiers
-      Dir[*notifier_file_paths].each {|f| require f }
+      Dir[*notifier_file_paths].each do |f|
+        next unless use?(notifier)
+
+        require f
+      end
     end
 
     private
