@@ -1,8 +1,12 @@
 pins:
   infrared_sensor: 18
+  distance_sensor:
+    trig: 17
+    echo: 27
 
 room:
   name: 俺の席
+  distance: 100 # cm
 
 notifiers:
   - FrontDesk::IdobataNotifier
