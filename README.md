@@ -3,7 +3,9 @@ Monitor whether you sit on your seat with Raspberry Pi
 
 ## Requirement
 
-You need Raspberry Pi which is installed Ruby 2.3.x, and HC-SR501.
+You need Raspberry Pi which is installed Ruby 2.3.x, HC-SR04 and HC-SR501.
+
+<img src="https://github.com/muryoimpl/frontdesk/wiki/images/frontdesk_breadboard.png" width="50%">
 
 ## Installation
 
@@ -21,6 +23,9 @@ And write configuration in `settings.yml`.
 # write GPIO pin number
 pins:
   infrared_sensor: 18
+  distance_sensor:
+    trig: 17
+    echo: 27
 
 # `name` is the room name which you want monitor.
 room:
