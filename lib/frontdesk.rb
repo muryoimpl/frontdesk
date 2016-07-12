@@ -9,4 +9,9 @@ module FrontDesk
   autoload :Notifier,       'notifier'
   autoload :NotifierRunner, 'notifier_runner'
   autoload :Work,           'work'
+  autoload :Seat,           'seat'
+
+  def root
+    Dir.pwd
+  end
 end
