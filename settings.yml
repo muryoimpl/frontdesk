@@ -10,6 +10,10 @@ room:
 
 notifiers:
   - FrontDesk::IdobataNotifier
+  - FrontDesk::SlackNotifier
 
 idobata:
+  url: 'hook url'
+
+slack:
   url: 'hook url'
