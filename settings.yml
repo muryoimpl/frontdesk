@@ -11,6 +11,7 @@ room:
 notifiers:
   - FrontDesk::IdobataNotifier
   - FrontDesk::SlackNotifier
+  - FrontDesk::YukkuriNotifier
 
 idobata:
   url: 'hook url'
