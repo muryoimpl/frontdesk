@@ -1,5 +1,8 @@
 module FrontDesk
   class Work
+    ENTER = 1
+    LEAVE = 0
+
     class << self
       def start
         NotifierRunner.require_notifiers
@@ -15,11 +18,10 @@ module FrontDesk
             FrontDesk::Work.seat.distance = FrontDesk::Work.calculate_distance
             puts "#{FrontDesk::Work.seat.distance} cm"
 
-            case value
-            when PiPiper::Pin::GPIO_HIGH
-              NotifierRunner.run(value) if FrontDesk::Work.seat.enter?
-            when PiPiper::Pin::GPIO_LOW
-              NotifierRunner.run(value) if FrontDesk::Work.seat.leave?
+            if FrontDesk::Work.seat.enter?
+              NotifierRunner.run(ENTER)
+            elsif FrontDesk::Work.seat.leave?
+              NotifierRunner.run(LEAVE)
             end
           end
         end
