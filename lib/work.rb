@@ -17,9 +17,9 @@ module FrontDesk
 
             case value
             when PiPiper::Pin::GPIO_HIGH
-              NotifierRunner.run(value) if seat.enter?
+              NotifierRunner.run(value) if FrontDesk::Work.seat.enter?
             when PiPiper::Pin::GPIO_LOW
-              NotifierRunner.run(value) if seat.leave?
+              NotifierRunner.run(value) if FrontDesk::Work.seat.leave?
             end
           end
         end
