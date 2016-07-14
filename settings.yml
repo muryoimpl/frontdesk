@@ -10,6 +10,7 @@ room:
 
 notifiers:
   - FrontDesk::IdobataNotifier
+  - FrontDesk::YukkuriNotifier
 
 idobata:
-  url: 'hook url'
+  url: https://idobata.io/hook/custom/d74c5697-d6dc-489a-b6d1-bcb5525015f8
