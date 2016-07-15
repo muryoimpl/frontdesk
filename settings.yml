@@ -3,6 +3,7 @@ pins:
   distance_sensor:
     trig: 17
     echo: 27
+  led: 25
 
 room:
   name: 俺の席
@@ -12,6 +13,7 @@ notifiers:
   - FrontDesk::IdobataNotifier
   - FrontDesk::SlackNotifier
   - FrontDesk::YukkuriNotifier
+  - FrontDesk::LEDNotifier
 
 idobata:
   url: 'hook url'
