@@ -6,12 +6,12 @@ module FrontDesk
 
   include PiPiper
 
-  autoload :Notifier,       'notifier'
-  autoload :NotifierRunner, 'notifier_runner'
-  autoload :Work,           'work'
-  autoload :Seat,           'seat'
-
   def root
     Dir.pwd
   end
 end
+
+require 'notifier'
+require 'notifier_runner'
+require 'work'
+require 'seat'
