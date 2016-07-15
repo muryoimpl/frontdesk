@@ -7,7 +7,7 @@ module FrontDesk
       def start
         NotifierRunner.require_notifiers
 
-        setup_distance_sensers
+        FrontDesk::DistanceSensor.setup
 
         puts 'ready!'
 
@@ -44,41 +44,22 @@ module FrontDesk
         ]
       end
 
-      def setup_distance_sensers
-        distance_trig_pin
-        distance_echo_pin
-      end
-
-      def distance_trig_pin
-        @distance_trig_pin ||= PiPiper::Pin.new(pin: Settings.pins.distance_sensor.trig, direction: :out)
-      end
-
-      def distance_echo_pin
-        @distance_echo_pin ||= PiPiper::Pin.new(pin: Settings.pins.distance_sensor.echo, trigger: :falling)
-      end
-
       def seat
         @seat ||= Seat.new
       end
 
       # 音速:340(m) * 時間(s) * 100(cmに変換) / 2(往復のため半分に)
       def calculate_distance
-        distance_trigger!
+        FrontDesk::DistanceSensor.trigger!
 
-        time = count_the_time
-        puts time
+        time = count_time
+        puts "time: #{time}sec"
         340 * time * 100 / 2
       end
 
-      def distance_trigger!
-        distance_trig_pin.on
-        sleep 0.0001
-        distance_trig_pin.off
-      end
-
-      def count_the_time
+      def count_time
         start = Time.now
-        distance_echo_pin.wait_for_change
+        FrontDesk::DistanceSensor.wait_for_change
         Time.now - start # second
       end
     end
