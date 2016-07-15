@@ -39,7 +39,8 @@ module FrontDesk
         [
           Settings.pins.infrared_sensor,
           Settings.pins.distance_sensor.echo,
-          Settings.pins.distance_sensor.trig
+          Settings.pins.distance_sensor.trig,
+          Settings.pins.led
         ]
       end
 
